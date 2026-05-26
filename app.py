@@ -1,12 +1,16 @@
+import os
 from flask import Flask, render_template
 
-app = Flask(__name__)
+# This tells Flask to look for index.html in both the templates folder AND the main folder
+app = Flask(__name__, template_folder=os.getcwd())
 
-# This tells Python to load your index.html when you open the site
 @app.route('/')
 def home():
-    return render_template('index.html')
+    # Try loading it directly from the root server space
+    if os.path.exists('index.html'):
+        return render_template('index.html')
+    # Backup choice if it finds the folder
+    return render_template('templates/index.html')
 
 if __name__ == '__main__':
-    # This starts the local server
     app.run(debug=True)
