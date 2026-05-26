@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Links directly to your static assets folder managed by Flask -->
+    <link rel="icon" href="/static/favicon.svg?v=1" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+    <title>Jai's Lawncare</title>
+</head>
+<body style="background-color: #FFBF00;">
+
+    <h1 class="h1">Jai's Lawncare Service</h1>
+    <h2>Our website is gold, because we are the golden standard.</h2>
+    <h3>We offer lawn mowings, poop scoopings, lawn edging, and plant potting/planting!</h3>
+    <p>This website was made by 12 year old Jai Rajan, and I also coded this website myself using Python, JavaScript, HTML, CSS.</p>
+
+    <!-- The Booking Box -->
+    <div class="appointment-box">
+        <h3>Ready for a Beautiful Lawn?</h3>
+        <p>Click below to get in touch and schedule your lawn care service this week!</p>
+        
+        <!-- The Button that triggers JavaScript -->
+        <button class="book-btn" id="revealBtn" onclick="showContactDetails()">
+            📅 Book an Appointment
+        </button>
+
+        <!-- The Hidden Contact Details -->
+        <div class="contact-info" id="contactDetails">
+            <!-- The link below turns the phone number into a clickable text link -->
+            <p><strong>📞 Phone:</strong> <a href="sms:+18474045113?body=Hi%20Jai,%20I'd%20like%20to%20book%20a%20lawncare%20service!" class="text-link">+1 (847)-404-5113</a></p>
+            <p><strong>✉️ Email:</strong> jairajanwork@gmail.com</p>
+            <p><em>Tip: Texting is the fastest way to reach me during the day!</em></p>
+        </div>
+    </div>
+
+    <!-- The Reviews Section Container -->
+    <div class="reviews-box">
+        <h3>Customer Reviews</h3>
+        
+        <!-- Form to write a new review -->
+        <div class="review-form">
+            <input type="text" id="reviewerName" placeholder="Your Name" required>
+            
+            <!-- Star Selection Row -->
+            <div class="star-rating-select">
+                <span class="star-input" onclick="setRating(1)">★</span>
+                <span class="star-input" onclick="setRating(2)">★</span>
+                <span class="star-input" onclick="setRating(3)">★</span>
+                <span class="star-input" onclick="setRating(4)">★</span>
+                <span class="star-input" onclick="setRating(5)">★</span>
+                <span id="ratingValueText">(Select Stars)</span>
+            </div>
+            
+            <textarea id="reviewText" placeholder="Write your review here..." rows="3" required></textarea>
+            <button class="review-btn" onclick="addReview()">Submit Review</button>
+        </div>
+
+        <!-- Container where reviews will appear -->
+        <div id="reviewsContainer">
+            <!-- JavaScript will insert reviews here -->
+        </div>
+    </div>
+
+</body>
+</html>
